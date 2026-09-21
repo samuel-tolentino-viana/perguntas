@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz | Desafio JavaScript</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="quiz-container">
+
+        <section class="quiz-card">
+
+            <header class="quiz-header">
+                <span class="quiz-label">DESAFIO JAVASCRIPT</span>
+
+                <h1>Quiz</h1>
+
+                <p>
+                    Teste seus conhecimentos e veja quantas perguntas
+                    você consegue acertar.
+                </p>
+            </header>
+
+
+            <!-- ÁREA DA PERGUNTA -->
+
+            <section class="quiz-content">
+
+                <div class="quiz-progress">
+                    <span id="question-number">Pergunta 1 de 5</span>
+
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+
+
+                <div class="question-area">
+
+                    <h2 id="question">
+                        Qual é a linguagem utilizada para estruturar
+                        páginas web?
+                    </h2>
+
+                    <div class="answers">
+
+                        <button class="answer">
+                            Python
+                        </button>
+
+                        <button class="answer">
+                            HTML
+                        </button>
+
+                        <button class="answer">
+                            Java
+                        </button>
+
+                        <button class="answer">
+                            C++
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quiz-footer">
+
+                    <span id="score">
+                        Pontuação: 0
+                    </span>
+
+                    <button id="next-btn" class="primary-button">
+                        Próxima
+                    </button>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- RESULTADO -->
+
+        <section class="result-card">
+
+            <span class="result-label">RESULTADO</span>
+
+            <h2>Quiz finalizado!</h2>
+
+            <p id="result-text">
+                Você acertou 4 de 5 perguntas.
+            </p>
+
+            <div class="final-score">
+                <span id="final-score">4</span>
+                <small>/ 5</small>
+            </div>
+
+            <button id="restart-btn" class="primary-button">
+                Jogar novamente
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

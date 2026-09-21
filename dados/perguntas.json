@@ -1,0 +1,56 @@
+[
+    {
+        "pergunta": "Qual a linguagem utilizada para estruturar páginas web?",
+        "alternativas": [
+            "Python",
+            "HTML",
+            "Java",
+            "C++"
+        ],
+        "resposta": "HTML"
+    },
+
+    {
+        "pergunta": "O que significa a sigla 'URL' na navegação web?",
+        "alternativas": [
+            "Uniform Resource Locator (Localizador Padrão de Recursos)",
+            "Universal Recovery Language (Link de Recuperação Universal)",
+            "Unified Routing Language (Linguagem de Roteamento Unificada)",
+            "Ultimate Redirection Utility (Utilitário de Redirecionamento Definitivo)"
+        ],
+        "resposta": "Uniform Resource Locator (Localizador Padrão de Recursos)"
+    },
+
+    {
+        "pergunta": "Qual dos seguintes componentes é conhecido como o 'cérebro' do computador, responsável por processar as instruções?",
+        "alternativas": [
+            "Memória RAM",
+            "Disco Rígido (HD/SSD)",
+            "Placa de Vídeo (GPU)",
+            "Unidade Central de Processamento (CPU)"
+        ],
+        "resposta": "Unidade Central de Processamento (CPU)"
+    },
+
+    {
+        "pergunta" : "Qual protocolo de rede é amplamente utilizado para garantir que a comunicação entre o navegador e o site seja criptografada e segura?",
+        "alternativas": [
+            "HTTPS",
+            "HTTP",
+            "FTP", 
+            "SMTP"
+        ],
+        "resposta": "HTTPS"
+    },
+
+    {
+        "pergunta": "Qual é a principal diferença entre as palavras-chave const e let na declaração de variáveis no JavaScript?",
+        "alternativas": [
+            "let só funciona dentro de funções, enquanto const pode ser usada em qualquer lugar do código",
+            "let permite que o valor da variável seja alterado posteriormente, enquanto const cria uma variável cujo valor não pode ser reatribuído.",
+            "const serve apenas para armazenar números e let serve apenas para textos (strings).",
+            "let roda mais rápido no navegador do que const"
+        ],
+        "resposta": "let permite que o valor da variável seja alterado posteriormente, enquanto const cria uma variável cujo valor não pode ser reatribuído."
+    }
+]
