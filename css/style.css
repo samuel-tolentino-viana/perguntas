@@ -209,14 +209,14 @@ body {
         transform 0.2s ease;
 }
 
-
-.answer:hover {
+.answer-select {
     border-color: var(--primary);
 
     background-color: #f8faff;
 
     transform: translateY(-1px);
 }
+
 
 
 /*
