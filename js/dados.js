@@ -1,7 +1,28 @@
 const barraDeProgresso = document.querySelector('.progress');
-const alternativas = document.querySelectorAll('.answer');
-const pergunta = document.querySelector('#question');
+let perguntaDaQuest = document.querySelector('#question');
 const botaoProxima = document.querySelector('#next-btn');
+const marqueAlternativa  = document.querySelector('.alert');
+
+
+
+function mudarquestao(dadosJson) {
+    let lista = 0;
+    botaoProxima.addEventListener('click', () => {
+        let alternativas = document.querySelectorAll('.answer');
+        for(let alt of alternativas) {
+            if(alt.classList.contains('answer-select')) {
+                perguntaDaQuest.innerHTML = dadosJson[lista].pergunta;
+                lista++;
+                marqueAlternativa.innerText = '';
+            } else {
+                marqueAlternativa.innerText = 'Marque uma alternativa acima!';
+            }
+        };
+    });
+};
+
+
+
 
 fetch('../dados/perguntas.json') // BUSCA O ARQUIVO EM:
 
@@ -15,5 +36,7 @@ fetch('../dados/perguntas.json') // BUSCA O ARQUIVO EM:
         
         // O CÓDIGO CONTINUA AQUI
         console.log(dados);
+        mudarquestao(dados);
     });
+
 
