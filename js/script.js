@@ -8,14 +8,13 @@ const pontuacaoTotal = document.getElementById('score');
 const cardDeResultado = document.querySelector('.result-card');
 const resultadoFinal = document.querySelector('#final-score');
 const subResultadoFinal = document.querySelector('#sub-final-score');
-const jogarNovamente = document.getElementById('restart-bnt');
 
 let pontuacao = 0;
 let nTeste = 0;
 
 
 
-fetch('../dados/perguntas.json')
+fetch('dados/perguntas.json')
 
     .then(resposta => {
         return resposta.json();
@@ -88,12 +87,6 @@ function finalRes(pontfinal) {
     subResultadoFinal.innerText = pontfinal;
 };
 
-function reinicarQuiz() {
-    cardDeResultado.style.display = 'none';
-    cardDoQuiz.style.display = 'block';
-    pontuacao = 0;
-    nTeste = 0;
-};
 
 
 
@@ -104,11 +97,6 @@ for(let alternativaclicada of alternativasSelecionada) {
     });
 };
 
-
-
-jogarNovamente.addEventListener('click', () => {
-    reinicarQuiz();
-});
 
 
 
