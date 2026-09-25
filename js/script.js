@@ -8,6 +8,7 @@ const pontuacaoTotal = document.getElementById('score');
 const cardDeResultado = document.querySelector('.result-card');
 const resultadoFinal = document.querySelector('#final-score');
 const subResultadoFinal = document.querySelector('#sub-final-score');
+const reiniciarJogo = document.getElementById('restart-btn');
 
 let pontuacao = 0;
 let nTeste = 0;
@@ -27,6 +28,9 @@ fetch('dados/perguntas.json')
             mudarAlternativas(dadosCompletos);
             limparAlternativas();
             perguntaEaumentarBarra();
+        });
+        reiniciarJogo.addEventListener('click', () => {
+            reiniciarQuiz(dadosCompletos);
         });
     });
 
@@ -85,6 +89,18 @@ function mudarCards() {
 function finalRes(pontfinal) {
     resultadoFinal.innerText = pontfinal;
     subResultadoFinal.innerText = pontfinal;
+};
+
+function reiniciarQuiz(dds) {
+    cardDeResultado.style.display = 'none';
+    cardDoQuiz.style.display = 'block';
+    pontuacao = 0;
+    pontuacaoTotal.innerText = `Corretas: 0`;
+    nTeste = 0;
+    limparAlternativas();
+    mudarAlternativas(dds);
+    questao.innerText = dds[0].pergunta;
+    perguntaEaumentarBarra();
 };
 
 

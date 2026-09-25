@@ -156,6 +156,8 @@ body {
     border-radius: inherit;
 
     background-color: var(--primary);
+
+    transition: width 0.3s ease-out 0.05s;
 }
 
 
@@ -387,3 +389,4 @@ body {
     }
 
 }
+
