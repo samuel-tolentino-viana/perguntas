@@ -47,8 +47,8 @@
         "pergunta": "Qual é a principal diferença entre as palavras-chave const e let na declaração de variáveis no JavaScript?",
         "alternativas": [
             "let só funciona dentro de funções, enquanto const pode ser usada em qualquer lugar do código",
-            "let permite que o valor da variável seja alterado posteriormente, enquanto const cria uma variável cujo valor não pode ser reatribuído.",
             "const serve apenas para armazenar números e let serve apenas para textos (strings).",
+            "let permite que o valor da variável seja alterado posteriormente, enquanto const cria uma variável cujo valor não pode ser reatribuído.",
             "let roda mais rápido no navegador do que const"
         ],
         "resposta": "let permite que o valor da variável seja alterado posteriormente, enquanto const cria uma variável cujo valor não pode ser reatribuído."
