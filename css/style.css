@@ -26,7 +26,7 @@
 
 
 body {
-    min-height: 100vh;
+    min-height: 96vh;
 
     display: flex;
     align-items: center;
@@ -39,6 +39,8 @@ body {
     font-family: 'Inter', sans-serif;
 
     color: var(--text-primary);
+
+    overflow: hidden;
 }
 
 
@@ -389,4 +391,3 @@ body {
     }
 
 }
-
