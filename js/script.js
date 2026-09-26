@@ -22,12 +22,15 @@ fetch('dados/perguntas.json')
     })
 
     .then(dadosCompletos => {
-        botao.addEventListener('click', ()  => {
+        botao.addEventListener('click', () => {
             verificarAltCorreta(dadosCompletos);
-            verificarAlternativas(dadosCompletos);
-            mudarAlternativas(dadosCompletos);
-            limparAlternativas();
-            perguntaEaumentarBarra();
+            setTimeout(() => {
+                verificarAlternativas(dadosCompletos);
+                mudarAlternativas(dadosCompletos);
+                limparAlternativas();
+                perguntaEaumentarBarra();
+                limparAlternativas();
+            }, 1000);
         });
         reiniciarJogo.addEventListener('click', () => {
             reiniciarQuiz(dadosCompletos);
@@ -37,15 +40,15 @@ fetch('dados/perguntas.json')
 
 
 function limparAlternativas() {
-    for(let limpar of alternativasSelecionada) {
+    for (let limpar of alternativasSelecionada) {
         limpar.classList.remove('answer-select')
     };
 };
 
 function verificarAlternativas(dds) {
-    for(let verif of alternativasSelecionada) {
-        if(verif.classList.contains('answer-select')) {
-            if(nTeste < 4) {
+    for (let verif of alternativasSelecionada) {
+        if (verif.classList.contains('answer-select')) {
+            if (nTeste < 4) {
                 nTeste++;
             } else {
                 mudarCards();
@@ -56,7 +59,7 @@ function verificarAlternativas(dds) {
 };
 
 function mudarAlternativas(dds) {
-    for(let i = 0; i<alternativasSelecionada.length; i++) {
+    for (let i = 0; i < alternativasSelecionada.length; i++) {
         alternativasSelecionada[i].innerText = dds[nTeste].alternativas[i];
     };
 };
@@ -69,14 +72,22 @@ function perguntaEaumentarBarra() {
 };
 
 function verificarAltCorreta(dds) {
-    for(let i = 0; i < alternativasSelecionada.length; i++) {
-        if(alternativasSelecionada[i].classList.contains('answer-select')) {
-            if(alternativasSelecionada[i].innerText === dds[nTeste].resposta) {
+    for (let i = 0; i < alternativasSelecionada.length; i++) {
+        if (alternativasSelecionada[i].innerText === dds[nTeste].resposta) {
+
+
+            alternativasSelecionada[i].classList.remove('wrong');
+            alternativasSelecionada[i].classList.add('correct');
+
+            if (alternativasSelecionada[i].classList.contains('answer-select')) {
                 pontuacao++;
                 pontuacaoTotal.innerText = `Corretas: ${pontuacao}`;
 
                 finalRes(pontuacao);
             }
+        }
+        else {
+            alternativasSelecionada[i].classList.add('wrong');
         }
     };
 };
@@ -103,10 +114,16 @@ function reiniciarQuiz(dds) {
     perguntaEaumentarBarra();
 };
 
+function limparAlternativas() {
+    for (let alternativas of alternativasSelecionada) {
+        alternativas.classList.remove('correct', 'wrong', 'answer-select');
+    }
+};
 
 
 
-for(let alternativaclicada of alternativasSelecionada) {
+
+for (let alternativaclicada of alternativasSelecionada) {
     alternativaclicada.addEventListener('click', () => {
         limparAlternativas();
         alternativaclicada.classList.add('answer-select');
