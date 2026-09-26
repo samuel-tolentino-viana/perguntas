@@ -30,7 +30,7 @@ fetch('dados/perguntas.json')
                 limparAlternativas();
                 perguntaEaumentarBarra();
                 limparAlternativas();
-            }, 1000);
+            }, 940);
         });
         reiniciarJogo.addEventListener('click', () => {
             reiniciarQuiz(dadosCompletos);
@@ -73,21 +73,22 @@ function perguntaEaumentarBarra() {
 
 function verificarAltCorreta(dds) {
     for (let i = 0; i < alternativasSelecionada.length; i++) {
-        if (alternativasSelecionada[i].innerText === dds[nTeste].resposta) {
+        if (alternativasSelecionada[i].innerText === dds[nTeste].resposta && alternativasSelecionada[i].classList.contains('answer-select')) {
 
 
-            alternativasSelecionada[i].classList.remove('wrong');
             alternativasSelecionada[i].classList.add('correct');
 
-            if (alternativasSelecionada[i].classList.contains('answer-select')) {
-                pontuacao++;
-                pontuacaoTotal.innerText = `Corretas: ${pontuacao}`;
+            pontuacao++;
+            pontuacaoTotal.innerText = `Corretas: ${pontuacao}`;
 
-                finalRes(pontuacao);
-            }
+            finalRes(pontuacao);
+
         }
-        else {
+
+        if (alternativasSelecionada[i].classList.contains('answer-select') && alternativasSelecionada[i].innerText != dds[nTeste].resposta) {
+
             alternativasSelecionada[i].classList.add('wrong');
+
         }
     };
 };
