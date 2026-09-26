@@ -39,8 +39,6 @@ body {
     font-family: 'Inter', sans-serif;
 
     color: var(--text-primary);
-
-    overflow: hidden;
 }
 
 
@@ -63,6 +61,8 @@ body {
     border-radius: 18px;
 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+    margin: 12px 0px 36px;
 }
 
 
