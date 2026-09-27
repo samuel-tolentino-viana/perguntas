@@ -12,6 +12,7 @@ const reiniciarJogo = document.getElementById('restart-btn');
 
 let pontuacao = 0;
 let nTeste = 0;
+let aguardandoProxima = false;
 
 
 
@@ -23,6 +24,14 @@ fetch('dados/perguntas.json')
 
     .then(dadosCompletos => {
         botao.addEventListener('click', () => {
+
+            if (aguardandoProxima) return;
+            if (![...alternativasSelecionada].some(alternativa => alternativa.classList.contains('answer-select'))) return;
+
+            aguardandoProxima = true;
+            botao.disabled = true;
+            alternativasSelecionada.forEach(alternativa => alternativa.disabled = true);
+
             verificarAltCorreta(dadosCompletos);
             setTimeout(() => {
                 verificarAlternativas(dadosCompletos);
@@ -30,6 +39,11 @@ fetch('dados/perguntas.json')
                 limparAlternativas();
                 perguntaEaumentarBarra();
                 limparAlternativas();
+
+                alternativasSelecionada.forEach(alternativa => alternativa.disabled = false);
+                aguardandoProxima = false;
+                botao.disabled = false;
+
             }, 940);
         });
         reiniciarJogo.addEventListener('click', () => {
@@ -90,6 +104,9 @@ function verificarAltCorreta(dds) {
             alternativasSelecionada[i].classList.add('wrong');
 
         }
+        if(alternativasSelecionada[i].innerText === dds[nTeste].resposta) {
+            alternativasSelecionada[i].classList.add('correct');
+        } 
     };
 };
 
